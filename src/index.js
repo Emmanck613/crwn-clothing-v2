@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { UserProvider } from './contexts/user.context';
+//any component inside UserProvider will have access to it's states
+import { CategoriesProvider } from './contexts/categories.context';
+import { CartProvider } from './contexts/cart.context';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <UserProvider>
+      <CategoriesProvider>
+        <CartProvider>
+          <App /> 
+        </CartProvider>
+      </CategoriesProvider>
+    </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -1,0 +1,39 @@
+.checkout-container {
+    width: 100%; /* Ensure full width on all screens */
+    overflow-x: auto; /* Enable horizontal scrolling if table content overflows */
+    
+  }
+  
+  .checkout-header, .checkout-item-container {
+    display: flex; /* Arrange header and item containers horizontally */
+  }
+  
+  .header-block, .image-container, span.name, span.quantity, span.price, .remove-button {
+    flex: 1; /* Distribute space equally among header and item elements */
+    padding: 10px; /* Add some padding for readability */
+    text-align: center; /* Center content within each element */
+  }
+
+  .total {
+    margin-top: 30px;
+    margin-left: 80%;
+    font-size: 36px;
+  }
+  
+  /* Media queries for responsive adjustments */
+  
+  @media (max-width: 768px) { /* Adjust for smaller screens (e.g., tablets) */
+    .checkout-header, .checkout-item-container {
+      flex-direction: column; /* Stack elements vertically */
+    }
+  
+    .header-block, .image-container, span.name, span.quantity, span.price, .remove-button {
+      flex: auto; /* Allow elements to grow as needed */
+    }
+  }
+  
+  @media (max-width: 576px) { /* Adjust for very small screens (e.g., smartphones) */
+    .header-block, .image-container, span.name, span.quantity, span.price, .remove-button {
+      font-size: 0.8rem; /* Reduce font size for better readability */
+    }
+  }
